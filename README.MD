@@ -113,7 +113,7 @@ Provided a software platform with a working version of the CUDA toolkit, it is a
 
 To check that the particles positions computed from your code are in agreement with the reference (slow) model, use the `--validate` option. For instance
 ```bash
-    ./build/bin/galax -C CPU_FAST --validate
+    ./build/bin/galax -c GPU --validate
 ```
 will compare the positions of the `CPU` and `CPU_FAST` models at each step.
 

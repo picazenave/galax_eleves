@@ -2,14 +2,12 @@
 
 #include "Model_CPU_naive.hpp"
 
-Model_CPU_naive
-::Model_CPU_naive(const Initstate& initstate, Particles& particles)
-: Model_CPU(initstate, particles)
+Model_CPU_naive ::Model_CPU_naive(const Initstate &initstate, Particles &particles)
+	: Model_CPU(initstate, particles)
 {
 }
 
-void Model_CPU_naive
-::step()
+void Model_CPU_naive ::step()
 {
 	std::fill(accelerationsx.begin(), accelerationsx.end(), 0);
 	std::fill(accelerationsy.begin(), accelerationsy.end(), 0);
@@ -19,7 +17,7 @@ void Model_CPU_naive
 	{
 		for (int j = 0; j < n_particles; j++)
 		{
-			if(i != j)
+			if (i != j)
 			{
 				const float diffx = particles.x[j] - particles.x[i];
 				const float diffy = particles.y[j] - particles.y[i];
@@ -49,8 +47,8 @@ void Model_CPU_naive
 		velocitiesx[i] += accelerationsx[i] * 2.0f;
 		velocitiesy[i] += accelerationsy[i] * 2.0f;
 		velocitiesz[i] += accelerationsz[i] * 2.0f;
-		particles.x[i] += velocitiesx   [i] * 0.1f;
-		particles.y[i] += velocitiesy   [i] * 0.1f;
-		particles.z[i] += velocitiesz   [i] * 0.1f;
+		particles.x[i] += velocitiesx[i] * 0.1f;
+		particles.y[i] += velocitiesy[i] * 0.1f;
+		particles.z[i] += velocitiesz[i] * 0.1f;
 	}
 }
