@@ -6,7 +6,7 @@
 #define DIFF_T (0.1f)
 #define EPS (1.0f)
 
-#define N_THREADS 256
+#define N_THREADS 128
 
 __global__ void maj_pos(float4 *positionsGPU, float4 *velocitiesGPU, float4 *accelerationsGPU, int n_particles)
 {
